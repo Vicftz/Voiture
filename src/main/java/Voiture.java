@@ -1,12 +1,11 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class Voiture {
     private String marque;
     private String couleur;
-    private Carrosserie carrosserie;
+    private Chassis chassis;
     private List<Roue> roues = new ArrayList<>();
 
     /**
@@ -18,15 +17,15 @@ public class Voiture {
         this.couleur = couleur;
     }
 
-    public Voiture(String marque, String couleur, Carrosserie carrosserie) {
+    public Voiture(String marque, String couleur, Chassis chassis) {
         // initialisation des variables d'instance
         this(marque, couleur);
-        this.carrosserie = carrosserie;
+        this.chassis = chassis;
     }
 
-    public Voiture(String marque, String couleur, Carrosserie carrosserie, ArrayList<Roue> roues) {
+    public Voiture(String marque, String couleur, Chassis chassis, ArrayList<Roue> roues) {
         // initialisation des variables d'instance
-        this(marque, couleur, carrosserie);
+        this(marque, couleur, chassis);
         this.roues = roues;
     }
 
@@ -47,19 +46,19 @@ public class Voiture {
     }
 
     public int getPoids() {
-        int poids = this.carrosserie.getPoids();
+        int poids = this.chassis.getPoids();
         for (Roue roue : this.roues) {
             poids += roue.getPoids();
         }
         return poids;
     }
 
-    public Carrosserie getCarrosserie() {
-        return this.carrosserie;
+    public Chassis getChassis() {
+        return this.chassis;
     }
 
-    public void setCarrosserie(Carrosserie carrosserie) {
-        this.carrosserie = carrosserie;
+    public void setChassis(Chassis chassis) {
+        this.chassis = chassis;
     }
 
     public List<Roue> getRoues() {

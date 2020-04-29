@@ -4,13 +4,13 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class CarrosserieTest {
-    private Carrosserie carrosserie1;
+public class ChassisTest {
+    private Chassis chassis1;
 
     /**
      * Default constructor for test class src.VoitureTest
      */
-    public CarrosserieTest() {
+    public ChassisTest() {
     }
 
     /**
@@ -20,7 +20,7 @@ public class CarrosserieTest {
      */
     @Before
     public void setUp() {
-        carrosserie1 = new Carrosserie(1000);
+        chassis1 = new Chassis(1000);
     }
 
     /**
@@ -35,21 +35,21 @@ public class CarrosserieTest {
     // Tests getters
     @Test
     public void testGetPoids() {
-        assertEquals(1000, carrosserie1.getPoids());
+        assertEquals(1000, chassis1.getPoids());
     }
 
     // Tests constructors
     @Test
-    public void testCarrosserie() {
-        Carrosserie carrosserie = new Carrosserie(2000);
-        assertEquals(2000, carrosserie.getPoids());
+    public void testChassis() {
+        Chassis chassis = new Chassis(2000);
+        assertEquals(2000, chassis.getPoids());
     }
 
     // Tests setters
     @Test
     public void testSetPoids() {
-        carrosserie1.setPoids(1500);
-        assertEquals(1500, carrosserie1.getPoids());
+        chassis1.setPoids(1500);
+        assertEquals(1500, chassis1.getPoids());
     }
 
     // Tests associations : nada
@@ -61,22 +61,22 @@ public class CarrosserieTest {
     // Tests domaine validité paramètres
     @Test
     public void testConstructeurPoidsValide() {
-        assertEquals(1000, new Carrosserie(1000).getPoids());
+        assertEquals(1000, new Chassis(1000).getPoids());
     }
 
     @Test
     public void testConstructeurPoidsInvalide() {
-        assertEquals(0, new Carrosserie(-1000).getPoids());
+        assertEquals(0, new Chassis(-1000).getPoids());
     }
 
     @Test
     public void testSetterPoidsValide() {
-        carrosserie1.setPoids(1500);
-        assertEquals(1500, carrosserie1.getPoids());
+        chassis1.setPoids(1500);
+        assertEquals(1500, chassis1.getPoids());
     }
 
     @Test
     public void testSetterPoidsInvalide() {
-        assertEquals(0, new Carrosserie(-1000).getPoids());
+        assertEquals(0, new Chassis(-1000).getPoids());
     }
 }

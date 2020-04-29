@@ -1,10 +1,7 @@
-public class Carrosserie {
+public class Chassis {
     private int poids = 0;
 
-    /**
-     * Constructor for objects of class Carosserie
-     */
-    public Carrosserie(int poids) {
+    public Chassis(int poids) {
         this.poids = Math.max(poids, 0);
     }
 

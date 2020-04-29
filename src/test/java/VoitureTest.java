@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 public class VoitureTest {
-    private Carrosserie carrosserie1;
+    private Chassis chassis1;
     private Voiture voiture1;
     private ArrayList<Roue> roueList = new ArrayList<>();
     private Roue roue1;
@@ -26,11 +26,11 @@ public class VoitureTest {
      */
     @Before
     public void setUp() {
-        carrosserie1 = new Carrosserie(1000);
+        chassis1 = new Chassis(1000);
         roue1 = new Roue();
         roue2 = new Roue(10, 10);
         roueList.add(roue1);
-        voiture1 = new Voiture("Rolls Royce", "noire", carrosserie1, roueList);
+        voiture1 = new Voiture("Rolls Royce", "noire", chassis1, roueList);
     }
 
     /**
@@ -54,8 +54,8 @@ public class VoitureTest {
     }
 
     @Test
-    public void testGetCarrosserie() {
-        assertEquals(carrosserie1, voiture1.getCarrosserie());
+    public void testGetChassis() {
+        assertEquals(chassis1, voiture1.getChassis());
     }
 
     @Test
@@ -73,19 +73,19 @@ public class VoitureTest {
 
     @Test
     public void testNewVoiture2() {
-        voiture1 = new Voiture("Mercedes", "rouge", carrosserie1);
+        voiture1 = new Voiture("Mercedes", "rouge", chassis1);
         assertEquals("Mercedes", voiture1.getMarque());
         assertEquals("rouge", voiture1.getCouleur());
-        assertEquals(carrosserie1, voiture1.getCarrosserie());
+        assertEquals(chassis1, voiture1.getChassis());
 
     }
 
     @Test
     public void testNewVoiture3() {
-        voiture1 = new Voiture("Mercedes", "rouge", carrosserie1, roueList);
+        voiture1 = new Voiture("Mercedes", "rouge", chassis1, roueList);
         assertEquals("Mercedes", voiture1.getMarque());
         assertEquals("rouge", voiture1.getCouleur());
-        assertEquals(carrosserie1, voiture1.getCarrosserie());
+        assertEquals(chassis1, voiture1.getChassis());
         assertEquals(roueList, voiture1.getRoues());
     }
 
@@ -103,10 +103,10 @@ public class VoitureTest {
     }
 
     @Test
-    public void testSetCarrosserie() {
-        carrosserie1 = new Carrosserie(10);
-        voiture1.setCarrosserie(carrosserie1);
-        assertEquals(carrosserie1, voiture1.getCarrosserie());
+    public void testSetChassis() {
+        chassis1 = new Chassis(10);
+        voiture1.setChassis(chassis1);
+        assertEquals(chassis1, voiture1.getChassis());
     }
 
     @Test
