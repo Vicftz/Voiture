@@ -22,14 +22,10 @@ public class Roue {
         return voiture;
     }
 
-    public void setVoiture(Voiture voiture) {
+    public void setVoiture(Voiture voiture) throws UnsupportedOperationException {
         this.voiture = voiture;
         if (!voiture.getRoues().contains(this)) {
-            try {
-                voiture.addRoue(this);
-            } catch (Exception e) {
-                System.out.println("Erreur : " + e);
-            }
+            voiture.addRoue(this);
         }
     }
 

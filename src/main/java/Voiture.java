@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class Voiture {
     private String marque;
     private String couleur;
     private Carrosserie carrosserie;
-    private List<Roue> roues = new ArrayList<>();
+    private List<Roue> roues = Arrays.asList(new Roue[4]);
 
     /**
      * Constructeur d'objets de classe src.Voiture
@@ -76,14 +77,10 @@ public class Voiture {
         roues.addAll(this.roues);
     }
 
-    public void addRoue(Roue roue) throws Exception {
-        if (this.roues.size() < 4) {
-            this.roues.add(roue);
-            if (roue.getVoiture() != this) {
-                roue.setVoiture(this);
-            }
-        } else {
-            throw new Exception("La voiture a déjà 4 roues");
+    public void addRoue(Roue roue) throws UnsupportedOperationException {
+        this.roues.add(roue);
+        if (roue.getVoiture() != this) {
+            roue.setVoiture(this);
         }
     }
 
