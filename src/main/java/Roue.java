@@ -9,8 +9,9 @@ public class Roue {
     }
 
     public Roue(float diametre, int poids) {
-        this.diametre = diametre;
-        this.poids = poids;
+        this.diametre = Math.max(diametre, 0.0f);
+        this.poids = Math.max(poids, 0);
+        ;
     }
 
     public Roue(float diametre, int poids, Voiture voiture) {
@@ -42,7 +43,7 @@ public class Roue {
     }
 
     public void setDiametre(float diametre) {
-        this.diametre = diametre;
+        this.diametre = Math.max(diametre, 0.0f);
     }
 
     public int getPoids() {
@@ -50,6 +51,6 @@ public class Roue {
     }
 
     public void setPoids(int poids) {
-        this.poids = poids;
+        this.poids = Math.max(poids, 0);
     }
 }

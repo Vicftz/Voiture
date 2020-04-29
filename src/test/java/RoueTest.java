@@ -127,5 +127,47 @@ public class RoueTest {
     }
 
     // Tests domaine validité paramètres
-    
+    @Test
+    public void testConstructeurDiametreValide() {
+        assertEquals(25.0f, new Roue(25.0f, 0).getDiametre(), 0);
+    }
+
+    @Test
+    public void testConstructeurDiametreInvalide() {
+        assertEquals(0.0f, new Roue(-25.0f, 0).getDiametre(), 0);
+    }
+
+    @Test
+    public void testConstructeurPoidsValide() {
+        assertEquals(5, new Roue(0, 5).getPoids());
+    }
+
+    @Test
+    public void testConstructeurPoidsInvalide() {
+        assertEquals(0, new Roue(0, -5).getPoids());
+    }
+
+    @Test
+    public void testSetterDiametreValide() {
+        roue1.setDiametre(25.0f);
+        assertEquals(25.0f, roue1.getDiametre(), 0);
+    }
+
+    @Test
+    public void testSetterDiametreInvalide() {
+        roue1.setDiametre(-25.0f);
+        assertEquals(0.0f, roue1.getDiametre(), 0);
+    }
+
+    @Test
+    public void testSetterPoidsValide() {
+        roue1.setPoids(5);
+        assertEquals(5, roue1.getPoids());
+    }
+
+    @Test
+    public void testSetterPoidsInvalide() {
+        roue1.setPoids(-5);
+        assertEquals(0, roue1.getPoids());
+    }
 }

@@ -12,7 +12,7 @@ public class Carrosserie {
      * Constructor for objects of class Carosserie
      */
     public Carrosserie(int poids) {
-        this.poids = (poids >= 0) ? poids : 0;
+        this.poids = Math.max(poids, 0);
     }
 
     public int getPoids() {

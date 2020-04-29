@@ -52,7 +52,7 @@ public class CarrosserieTest {
         assertEquals(1500, carrosserie1.getPoids());
     }
 
-    // Tests associations
+    // Tests associations : nada
 
     // Tests other methods : nada
 
