@@ -125,7 +125,19 @@ public class VoitureTest {
     }
 
     // Tests associations
+    @Test
+    public void testRemoveRoueBiDir() {
+        voiture1.removeRoue(roue1);
+        assertFalse(voiture1.getRoues().contains(roue1));
+        assertNull(roue1.getVoiture());
+    }
 
+    @Test
+    public void testAddRoueBiDir() {
+        voiture1.addRoue(roue2);
+        assertTrue(voiture1.getRoues().contains(roue2));
+        assertEquals(voiture1, roue2.getVoiture());
+    }
 
     // Tests autres méthodes
     @Test

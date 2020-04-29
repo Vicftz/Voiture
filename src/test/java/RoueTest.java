@@ -100,6 +100,19 @@ public class RoueTest {
     }
 
     // Tests associations
+    @Test
+    public void testRemoveVoitureBiDir() {
+        roue3.removeVoiture();
+        assertNull(roue3.getVoiture());
+        assertFalse(voiture.getRoues().contains(roue3));
+    }
+
+    @Test
+    public void testAddVoitureBiDir() {
+        roue2.setVoiture(voiture);
+        assertEquals(voiture, roue2.getVoiture());
+        assertTrue(voiture.getRoues().contains(roue2));
+    }
 
     // Tests other methods : nada ?
 
