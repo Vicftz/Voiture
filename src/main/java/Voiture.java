@@ -7,6 +7,7 @@ public class Voiture {
     private String couleur;
     private Chassis chassis;
     private List<Roue> roues = new ArrayList<>();
+    private int poids;
 
     /**
      * Constructeur d'objets de classe src.Voiture
@@ -46,7 +47,7 @@ public class Voiture {
     }
 
     public int getPoids() {
-        int poids = this.chassis.getPoids();
+        poids = this.chassis.getPoids();
         for (Roue roue : this.roues) {
             poids += roue.getPoids();
         }
