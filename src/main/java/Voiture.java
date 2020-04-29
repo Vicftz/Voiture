@@ -14,7 +14,7 @@ public class Voiture {
     private String marque;
     private String couleur;
     private Carrosserie carrosserie;
-    private List<Roue> roues = Arrays.asList(new Roue[4]);
+    private List<Roue> roues = new ArrayList<>();
 
     /**
      * Constructeur d'objets de classe src.Voiture
@@ -34,7 +34,7 @@ public class Voiture {
     public Voiture(String marque, String couleur, Carrosserie carrosserie, ArrayList<Roue> roues) {
         // initialisation des variables d'instance
         this(marque, couleur, carrosserie);
-        roues.addAll(this.roues);
+        this.roues = roues;
     }
 
     public String getMarque() {
@@ -74,7 +74,7 @@ public class Voiture {
     }
 
     public void setRoues(ArrayList<Roue> roues) {
-        roues.addAll(this.roues);
+        this.roues = roues;
     }
 
     public Voiture removeRoue(Roue roue) {
@@ -85,10 +85,14 @@ public class Voiture {
         return this;
     }
 
-    public void addRoue(Roue roue) throws UnsupportedOperationException {
-        this.roues.add(roue);
-        if (roue.getVoiture() != this) {
-            roue.setVoiture(this);
+    public void addRoue(Roue roue) {
+        if(this.roues.size() <4) {
+            this.roues.add(roue);
+            if (roue.getVoiture() != this) {
+                roue.setVoiture(this);
+            }
+        } else {
+            throw new UnsupportedOperationException("La voiture a déjà 4 roues");
         }
     }
 
