@@ -8,8 +8,7 @@ import java.util.List;
  * @author Victor Fritz, Quentin Sauvage
  * @version 28/04/2020
  */
-public class Voiture
-{
+public class Voiture {
     // variables d'instance - remplacez l'exemple qui suit par le votre
     private String marque;
     private String couleur;
@@ -19,51 +18,53 @@ public class Voiture
     /**
      * Constructeur d'objets de classe src.Voiture
      */
-    public Voiture(String marque, String couleur)
-    {
+    public Voiture(String marque, String couleur) {
         // initialisation des variables d'instance
         this.marque = marque;
         this.couleur = couleur;
     }
 
-    public Voiture(String marque, String couleur, Carrosserie carrosserie)
-    {
+    public Voiture(String marque, String couleur, Carrosserie carrosserie) {
         // initialisation des variables d'instance
-        new Voiture(marque, couleur);
+        this(marque, couleur);
         this.carrosserie = carrosserie;
     }
 
-    public Voiture(String marque, String couleur, Carrosserie carrosserie, ArrayList<Roue> roues)
-    {
+    public Voiture(String marque, String couleur, Carrosserie carrosserie, ArrayList<Roue> roues) {
         // initialisation des variables d'instance
-        new Voiture(marque, couleur, carrosserie);
+        this(marque, couleur, carrosserie);
         roues.addAll(this.roues);
     }
-    
-    public String getMarque(){
+
+    public String getMarque() {
         return this.marque;
     }
-    public void setMarque(String marque){
+
+    public void setMarque(String marque) {
         this.marque = marque;
     }
-    public String getCouleur(){
+
+    public String getCouleur() {
         return this.couleur;
     }
-    public void setCouleur(String couleur){
+
+    public void setCouleur(String couleur) {
         this.couleur = couleur;
     }
-    
-    public int getPoids(){
-        return this.carrosserie.getPoids();
+
+    public int getPoids() {
+        int poids = this.carrosserie.getPoids();
+        for (Roue roue : this.roues) {
+            poids += roue.getPoids();
+        }
+        return poids;
     }
-    
-    public Carrosserie getCarrosserie()
-    {
+
+    public Carrosserie getCarrosserie() {
         return this.carrosserie;
     }
-    
-    public void setCarrosserie(Carrosserie carrosserie)
-    {
+
+    public void setCarrosserie(Carrosserie carrosserie) {
         this.carrosserie = carrosserie;
     }
 
@@ -76,9 +77,9 @@ public class Voiture
     }
 
     public void addRoue(Roue roue) throws Exception {
-        if(this.roues.size() <4){
+        if (this.roues.size() < 4) {
             this.roues.add(roue);
-            if(roue.getVoiture() != this){
+            if (roue.getVoiture() != this) {
                 roue.setVoiture(this);
             }
         } else {
@@ -86,8 +87,7 @@ public class Voiture
         }
     }
 
-    public String toString()
-    {
+    public String toString() {
         return this.marque + " de couleur " + couleur;
     }
 }

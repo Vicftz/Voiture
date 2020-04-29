@@ -14,7 +14,7 @@ public class Roue {
     }
 
     public Roue(float diametre, int poids, Voiture voiture) {
-        new Roue(diametre, poids);
+        this(diametre, poids);
         this.voiture = voiture;
     }
 
