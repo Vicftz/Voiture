@@ -1,11 +1,4 @@
-/**
- * src.Carrosserie
- *
- * @author Victor Fritz, Quentin Sauvage
- * @version 28/04/2020
- */
 public class Carrosserie {
-    // instance variables - replace the example below with your own
     private int poids = 0;
 
     /**

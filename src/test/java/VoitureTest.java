@@ -6,12 +6,6 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-/**
- * The test class src.VoitureTest.
- *
- * @author Fritz, Sauvage
- * @version 29/04/2020
- */
 public class VoitureTest {
     private Carrosserie carrosserie1;
     private Voiture voiture1;
@@ -165,7 +159,6 @@ public class VoitureTest {
         assertEquals("Rolls Royce de couleur noire", voiture1.toString());
     }
 
-    // Tests domaine validité paramètres
-
+    // Tests domaine validité paramètres : nada
 }
 

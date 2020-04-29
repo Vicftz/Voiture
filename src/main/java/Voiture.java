@@ -3,14 +3,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Classe src.Voiture
- *
- * @author Victor Fritz, Quentin Sauvage
- * @version 28/04/2020
- */
 public class Voiture {
-    // variables d'instance - remplacez l'exemple qui suit par le votre
     private String marque;
     private String couleur;
     private Carrosserie carrosserie;
