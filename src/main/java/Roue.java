@@ -8,12 +8,12 @@ public class Roue {
         this.poids = 0;
     }
 
-    public Roue(float diametre, int poids){
+    public Roue(float diametre, int poids) {
         this.diametre = diametre;
         this.poids = poids;
     }
 
-    public Roue(float diametre, int poids, Voiture voiture){
+    public Roue(float diametre, int poids, Voiture voiture) {
         new Roue(diametre, poids);
         this.voiture = voiture;
     }
@@ -22,10 +22,14 @@ public class Roue {
         return voiture;
     }
 
-    public void setVoiture(Voiture voiture) throws Exception {
+    public void setVoiture(Voiture voiture) {
         this.voiture = voiture;
-        if(!voiture.getRoues().contains(this)){
-            voiture.addRoue(this);
+        if (!voiture.getRoues().contains(this)) {
+            try {
+                voiture.addRoue(this);
+            } catch (Exception e) {
+                System.out.println("Erreur : " + e);
+            }
         }
     }
 

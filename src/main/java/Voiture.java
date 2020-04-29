@@ -54,12 +54,7 @@ public class Voiture
     }
     
     public int getPoids(){
-        int poids = 0;
-        for (Roue roue: this.roues) {
-            poids+= roue.getPoids();
-        }
-        poids += this.carrosserie.getPoids();
-        return poids;
+        return this.carrosserie.getPoids();
     }
     
     public Carrosserie getCarrosserie()
@@ -81,9 +76,11 @@ public class Voiture
     }
 
     public void addRoue(Roue roue) throws Exception {
-        System.out.println("Il y a " + this.roues.size() + " dans la voiture");
         if(this.roues.size() <4){
             this.roues.add(roue);
+            if(roue.getVoiture() != this){
+                roue.setVoiture(this);
+            }
         } else {
             throw new Exception("La voiture a déjà 4 roues");
         }
