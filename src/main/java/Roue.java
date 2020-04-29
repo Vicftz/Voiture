@@ -29,6 +29,14 @@ public class Roue {
         }
     }
 
+    public Roue removeVoiture() {
+        if (this.voiture != null) {
+            this.voiture.removeRoue(this);
+            this.voiture = null;
+        }
+        return this;
+    }
+
     public float getDiametre() {
         return diametre;
     }

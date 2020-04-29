@@ -77,6 +77,14 @@ public class Voiture {
         roues.addAll(this.roues);
     }
 
+    public Voiture removeRoue(Roue roue) {
+        if (this.roues.contains(roue)) {
+            this.roues.remove(roue);
+            roue.removeVoiture();
+        }
+        return this;
+    }
+
     public void addRoue(Roue roue) throws UnsupportedOperationException {
         this.roues.add(roue);
         if (roue.getVoiture() != this) {
