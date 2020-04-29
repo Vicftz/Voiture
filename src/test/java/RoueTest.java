@@ -125,4 +125,7 @@ public class RoueTest {
         //Déjà 4 roues présentes dans la voiture, exception levée à la 5ème
         roue3.setVoiture(voiture);
     }
+
+    // Tests domaine validité paramètres
+    
 }

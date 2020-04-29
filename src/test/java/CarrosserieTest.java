@@ -57,4 +57,26 @@ public class CarrosserieTest {
     // Tests other methods : nada
 
     // Tests exceptions : nada
+
+    // Tests domaine validité paramètres
+    @Test
+    public void testConstructeurPoidsValide() {
+        assertEquals(1000, new Carrosserie(1000).getPoids());
+    }
+
+    @Test
+    public void testConstructeurPoidsInvalide() {
+        assertEquals(0, new Carrosserie(-1000).getPoids());
+    }
+
+    @Test
+    public void testSetterPoidsValide() {
+        carrosserie1.setPoids(1500);
+        assertEquals(1500, carrosserie1.getPoids());
+    }
+
+    @Test
+    public void testSetterPoidsInvalide() {
+        assertEquals(0, new Carrosserie(-1000).getPoids());
+    }
 }

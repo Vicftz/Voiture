@@ -86,7 +86,7 @@ public class Voiture {
     }
 
     public void addRoue(Roue roue) {
-        if(this.roues.size() <4) {
+        if (this.roues.size() < 4) {
             this.roues.add(roue);
             if (roue.getVoiture() != this) {
                 roue.setVoiture(this);

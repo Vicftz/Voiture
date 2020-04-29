@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="17" failures="0" name="VoitureTest" time="0.01" errors="0" skipped="0">
+<testsuite tests="12" failures="0" name="RoueTest" time="0.002" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="14.0.1+7"/>
@@ -60,21 +60,16 @@
     <property name="sun.stdout.encoding" value="cp437"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="VoitureTest" name="testAddRoueException" time="0.002"/>
-  <testcase classname="VoitureTest" name="testGetPoids" time="0"/>
-  <testcase classname="VoitureTest" name="testGetRoues" time="0"/>
-  <testcase classname="VoitureTest" name="testAddRoue" time="0.001"/>
-  <testcase classname="VoitureTest" name="testNewVoiture1" time="0"/>
-  <testcase classname="VoitureTest" name="testNewVoiture2" time="0"/>
-  <testcase classname="VoitureTest" name="testNewVoiture3" time="0.001"/>
-  <testcase classname="VoitureTest" name="testGetCarrosserie" time="0"/>
-  <testcase classname="VoitureTest" name="testSetCouleur" time="0.001"/>
-  <testcase classname="VoitureTest" name="testToString" time="0"/>
-  <testcase classname="VoitureTest" name="testAddRoueBiDir" time="0.001"/>
-  <testcase classname="VoitureTest" name="testSetMarque" time="0.001"/>
-  <testcase classname="VoitureTest" name="testGetCouleur" time="0"/>
-  <testcase classname="VoitureTest" name="testGetMarque" time="0"/>
-  <testcase classname="VoitureTest" name="testSetCarrosserie" time="0"/>
-  <testcase classname="VoitureTest" name="testRemoveRoueBiDir" time="0.003"/>
-  <testcase classname="VoitureTest" name="testSetRoues" time="0"/>
+  <testcase classname="RoueTest" name="testSetVoitureException" time="0"/>
+  <testcase classname="RoueTest" name="testGetPoids" time="0"/>
+  <testcase classname="RoueTest" name="testAddVoitureBiDir" time="0"/>
+  <testcase classname="RoueTest" name="testSetVoiture" time="0"/>
+  <testcase classname="RoueTest" name="testGetVoiture" time="0"/>
+  <testcase classname="RoueTest" name="testSetDiametre" time="0"/>
+  <testcase classname="RoueTest" name="testGetDiametre" time="0"/>
+  <testcase classname="RoueTest" name="testRemoveVoitureBiDir" time="0"/>
+  <testcase classname="RoueTest" name="testNewRoue1" time="0"/>
+  <testcase classname="RoueTest" name="testNewRoue2" time="0.001"/>
+  <testcase classname="RoueTest" name="testNewRoue3" time="0"/>
+  <testcase classname="RoueTest" name="testSetPoids" time="0.001"/>
 </testsuite>

@@ -165,6 +165,7 @@ public class VoitureTest {
         assertEquals("Rolls Royce de couleur noire", voiture1.toString());
     }
 
+    // Tests domaine validité paramètres
 
 }
 
