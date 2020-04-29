@@ -5,7 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The test class src.VoitureTest.
@@ -14,7 +13,7 @@ import java.util.List;
  * @version 29/04/2020
  */
 public class VoitureTest {
-    private Carrosserie carrosse1;
+    private Carrosserie carrosserie1;
     private Voiture voiture1;
     private ArrayList<Roue> roueList = new ArrayList<>();
     private Roue roue1;
@@ -33,11 +32,11 @@ public class VoitureTest {
      */
     @Before
     public void setUp() {
-        carrosse1 = new Carrosserie(1000);
+        carrosserie1 = new Carrosserie(1000);
         roue1 = new Roue();
-        roue2 = new Roue(10,10);
+        roue2 = new Roue(10, 10);
         roueList.add(roue1);
-        voiture1 = new Voiture("Rolls Royce", "noire", carrosse1, roueList);
+        voiture1 = new Voiture("Rolls Royce", "noire", carrosserie1, roueList);
     }
 
     /**
@@ -52,77 +51,77 @@ public class VoitureTest {
     // Tests getters
     @Test
     public void testGetMarque() {
-        assertEquals(voiture1.getMarque(),"Rolls Royce");
+        assertEquals("Rolls Royce", voiture1.getMarque());
     }
 
     @Test
     public void testGetCouleur() {
-        assertEquals(voiture1.getCouleur(),"noire");
+        assertEquals("noire", voiture1.getCouleur());
     }
 
     @Test
     public void testGetCarrosserie() {
-        assertEquals(voiture1.getCarrosserie(), carrosse1);
+        assertEquals(carrosserie1, voiture1.getCarrosserie());
     }
 
     @Test
     public void testGetRoues() {
-        assertEquals(voiture1.getRoues(), roueList);
+        assertEquals(roueList, voiture1.getRoues());
     }
 
     // Tests constructors
     @Test
-    public void testNewVoiture1(){
+    public void testNewVoiture1() {
         voiture1 = new Voiture("Mercedes", "rouge");
-        assertEquals(voiture1.getMarque(),"Mercedes");
-        assertEquals(voiture1.getCouleur(),"rouge");
+        assertEquals("Mercedes", voiture1.getMarque());
+        assertEquals("rouge", voiture1.getCouleur());
     }
 
     @Test
-    public void testNewVoiture2(){
-        voiture1 = new Voiture("Mercedes", "rouge", carrosse1);
-        assertEquals(voiture1.getMarque(),"Mercedes");
-        assertEquals(voiture1.getCouleur(),"rouge");
-        assertEquals(voiture1.getCarrosserie(), carrosse1);
+    public void testNewVoiture2() {
+        voiture1 = new Voiture("Mercedes", "rouge", carrosserie1);
+        assertEquals("Mercedes", voiture1.getMarque());
+        assertEquals("rouge", voiture1.getCouleur());
+        assertEquals(carrosserie1, voiture1.getCarrosserie());
 
     }
 
     @Test
-    public void testNewVoiture3(){
-        voiture1 = new Voiture("Mercedes", "rouge", carrosse1, roueList);
-        assertEquals(voiture1.getMarque(),"Mercedes");
-        assertEquals(voiture1.getCouleur(),"rouge");
-        assertEquals(voiture1.getCarrosserie(), carrosse1);
-        assertEquals(voiture1.getRoues(), roueList);
+    public void testNewVoiture3() {
+        voiture1 = new Voiture("Mercedes", "rouge", carrosserie1, roueList);
+        assertEquals("Mercedes", voiture1.getMarque());
+        assertEquals("rouge", voiture1.getCouleur());
+        assertEquals(carrosserie1, voiture1.getCarrosserie());
+        assertEquals(roueList, voiture1.getRoues());
     }
 
     // Tests setters
     @Test
-    public void testSetMarque(){
+    public void testSetMarque() {
         voiture1.setMarque("Toyota");
-        assertEquals(voiture1.getMarque(),"Toyota");
+        assertEquals("Toyota", voiture1.getMarque());
     }
 
     @Test
-    public void testSetCouleur(){
+    public void testSetCouleur() {
         voiture1.setCouleur("vert");
-        assertEquals(voiture1.getCouleur(),"vert");
+        assertEquals("vert", voiture1.getCouleur());
     }
 
     @Test
-    public void testSetCarrosserie(){
-        carrosse1 = new Carrosserie(10);
-        voiture1.setCarrosserie(carrosse1);
-        assertEquals(voiture1.getCarrosserie(), carrosse1);
+    public void testSetCarrosserie() {
+        carrosserie1 = new Carrosserie(10);
+        voiture1.setCarrosserie(carrosserie1);
+        assertEquals(carrosserie1, voiture1.getCarrosserie());
     }
 
     @Test
-    public void testSetRoues(){
+    public void testSetRoues() {
         roueList = new ArrayList<>();
         roueList.add(roue1);
         roueList.add(roue2);
         voiture1.setRoues(roueList);
-        assertEquals(voiture1.getRoues(), roueList);
+        assertEquals(roueList, voiture1.getRoues());
     }
 
     // Tests associations
@@ -144,7 +143,7 @@ public class VoitureTest {
     @Test(expected = UnsupportedOperationException.class)
     public void testAddRoueException() {
         voiture1 = new Voiture("Mercedes", "rouge");
-        for (int i=0; i<5; i++){
+        for (int i = 0; i < 5; i++) {
             voiture1.addRoue(new Roue());
         }
     }

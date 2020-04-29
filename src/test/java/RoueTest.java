@@ -26,8 +26,8 @@ public class RoueTest {
     public void setUp() {
         voiture = new Voiture("Mercedes", "rouge");
         roue1 = new Roue();
-        roue2 = new Roue(20,30);
-        roue3 = new Roue(20,30,voiture);
+        roue2 = new Roue(20, 30);
+        roue3 = new Roue(20, 30, voiture);
     }
 
     /**
@@ -47,53 +47,56 @@ public class RoueTest {
 
     @Test
     public void testGetDiametre() {
-        assertEquals(roue2.getDiametre(), 20,0);
+        assertEquals(20, roue2.getDiametre(), 0);
     }
 
     @Test
     public void testGetPoids() {
-        assertEquals(roue2.getPoids(), 30);
+        assertEquals(30, roue2.getPoids());
     }
 
     // Tests constructors
     @Test
     public void testNewRoue1() {
-        assertEquals(roue1.getDiametre(), 0,0);
-        assertEquals(roue1.getPoids(), 0);
-        assertNull(roue1.getVoiture());
+        Roue roue = new Roue();
+        assertEquals(0, roue.getDiametre(), 0);
+        assertEquals(0, roue.getPoids());
+        assertNull(roue.getVoiture());
     }
 
     @Test
     public void testNewRoue2() {
-        assertEquals(roue2.getDiametre(), 20,0);
-        assertEquals(roue2.getPoids(), 30);
-        assertNull(roue2.getVoiture());
+        Roue roue = new Roue(20, 30);
+        assertEquals(roue.getDiametre(), 20, 0);
+        assertEquals(roue.getPoids(), 30);
+        assertNull(roue.getVoiture());
     }
 
     @Test
     public void testNewRoue3() {
-        assertEquals(roue3.getDiametre(), 20,0);
-        assertEquals(roue3.getPoids(), 30);
-        assertEquals(roue3.getVoiture(), voiture);
+        Roue roue = new Roue(20, 30, voiture);
+        assertEquals(20, roue.getDiametre(), 0);
+        assertEquals(30, roue.getPoids());
+        assertEquals(voiture, roue.getVoiture());
     }
 
     // Tests setters
     @Test
     public void testSetVoiture() {
         roue1.setVoiture(voiture);
-        assertEquals(voiture, roue1.getVoiture());
+        assertEquals(roue1.getVoiture(), voiture);
     }
 
     @Test
     public void testSetDiametre() {
         roue1.setDiametre(100);
-        assertEquals(roue1.getDiametre(),100,0);
+        assertEquals(100, roue1.getDiametre(), 0);
     }
 
     @Test
     public void testSetPoids() {
         roue1.setPoids(100);
-        assertEquals(roue1.getPoids(),100);
+        assertEquals(100, roue1.getPoids());
     }
 
     // Tests associations
@@ -103,7 +106,7 @@ public class RoueTest {
     // Tests exceptions
     @Test(expected = UnsupportedOperationException.class)
     public void testSetVoitureException() {
-        for (int i=0; i<4; i++){
+        for (int i = 0; i < 4; i++) {
             voiture.addRoue(new Roue());
         }
         //Déjà 4 roues présentes dans la voiture, exception levée à la 5ème
