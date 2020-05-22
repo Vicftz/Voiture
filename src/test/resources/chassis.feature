@@ -6,21 +6,21 @@
     Afin de pouvoir l'utiliser pour ma future voiture.
 
     Scenario Outline: le client crée un chassis dont le poids est valide.
-      Given le client appelle le constructeur de chassis
-        When le client saisit un poids positif
-        Then le chassis est créé avec le poids indiqué en entrée
+      Given le client crée un nouveau chassis sans spécifier son poids
+        When le client applique au chassis un poids positif
+        Then le chassis est créé et son poids est enregistré avec celui indiqué en entrée
 
       Examples:
-        | appel constructeur | poids enregistré |
-        | new Chassis(0);    | 0                |
-        | new Chassis(1000); | 1000             |
+        | appel constructeur           | spécification du poids  | poids enregistré |
+        | chassis = new Chassis();     | chassis.setPoids(0);    | 0                |
+        | chassis = new Chassis();     | chassis.setPoids(1000); | 1000             |
 
     Scenario Outline: le client crée un chassis dont le poids est invalide.
-      Given le client appelle le constructeur de chassis
-      When le client saisit un poids strictement négatif
-      Then le chassis est créé avec un poids de 0
+      Given le client crée un nouveau chassis sans spécifier son poids
+      When le client applique au chassis un poids négatif
+      Then le chassis est créé et son poids est enregistré avec une valeur de 0
 
       Examples:
-        | appel constructeur | poids enregistré |
-        | new Chassis(-1);   | 0                |
-        | new Chassis(-500); | 0                |
+        | appel constructeur           | spécification du poids  | poids enregistré |
+        | chassis = new Chassis();     | chassis.setPoids(-1);   | 0                |
+        | chassis = new Chassis();     | chassis.setPoids(-500); | 0                |

@@ -1,21 +1,25 @@
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
 public class ChassisCucumberTest {
-    @io.cucumber.java.en.Given("le client appelle le constructeur de chassis")
-    public void leClientAppelleLeConstructeurDeChassis() {
+    @Given("le client crée un nouveau chassis sans spécifier son poids")
+    public void leClientCréeUnNouveauChassisSansSpécifierSonPoids() {
     }
 
-    @io.cucumber.java.en.When("le client saisit un poids positif")
-    public void leClientSaisitUnPoidsPositif() {
+    @When("le client applique au chassis un poids positif")
+    public void leClientAppliqueAuChassisUnPoidsPositif() {
     }
 
-    @io.cucumber.java.en.Then("le chassis est créé avec le poids indiqué en entrée")
-    public void leChassisEstCrééAvecLePoidsIndiquéEnEntrée() {
+    @Then("le chassis est créé et son poids est enregistré avec celui indiqué en entrée")
+    public void leChassisEstCrééEtSonPoidsEstEnregistréAvecCeluiIndiquéEnEntrée() {
     }
 
-    @io.cucumber.java.en.When("le client saisit un poids strictement négatif")
-    public void leClientSaisitUnPoidsStrictementNégatif() {
+    @When("le client applique au chassis un poids négatif")
+    public void leClientAppliqueAuChassisUnPoidsNégatif() {
     }
 
-    @io.cucumber.java.en.Then("le chassis est créé avec un poids de {int}")
-    public void leChassisEstCrééAvecUnPoidsDe(int arg0) {
+    @Then("le chassis est créé et son poids est enregistré avec une valeur de {int}")
+    public void leChassisEstCrééEtSonPoidsEstEnregistréAvecUneValeurDe(int arg0) {
     }
 }
