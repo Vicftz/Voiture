@@ -47,7 +47,7 @@ public class Voiture {
     }
 
     public int getPoids() {
-        poids = 0;
+        poids = this.chassis.getPoids();
         for (Roue roue : this.roues) {
             poids += roue.getPoids();
         }
