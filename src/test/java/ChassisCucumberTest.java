@@ -12,23 +12,24 @@ public class ChassisCucumberTest {
         chassis = new Chassis();
     }
 
-    @When("le client applique au chassis un poids positif")
-    public void leClientAppliqueAuChassisUnPoidsPositif() {
-        chassis.setPoids(800);
+    @When("le client applique au chassis un {int} positif")
+    public void le_client_applique_au_chassis_un_positif(Integer int1) {
+        chassis.setPoids(int1);
     }
 
-    @Then("le chassis est créé et son poids est enregistré avec celui indiqué en entrée")
-    public void leChassisEstCrééEtSonPoidsEstEnregistréAvecCeluiIndiquéEnEntrée() {
-        assertEquals(800, chassis.getPoids());
+    @Then("le chassis est créé et son {int} est celui indiqué en entrée")
+    public void le_chassis_est_créé_et_son_est_celui_indiqué_en_entrée(Integer int1) {
+        assertEquals(int1, Integer.valueOf(chassis.getPoids()));
     }
 
-    @When("le client applique au chassis un poids négatif")
-    public void leClientAppliqueAuChassisUnPoidsNégatif() {
-        chassis.setPoids(-500);
+    @When("le client applique au chassis un {int} négatif")
+    public void le_client_applique_au_chassis_un_négatif(Integer int1) {
+        chassis.setPoids(int1);
     }
 
     @Then("le chassis est créé et son poids est enregistré avec une valeur de {int}")
-    public void leChassisEstCrééEtSonPoidsEstEnregistréAvecUneValeurDe(int arg0) {
-        assertEquals(0, chassis.getPoids());
+    public void le_chassis_est_créé_et_son_poids_est_enregistré_avec_une_valeur_de(Integer int1) {
+        // Write code here that turns the phrase above into concrete actions
+        assertEquals(int1, Integer.valueOf(chassis.getPoids()));
     }
 }
