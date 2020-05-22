@@ -40,6 +40,12 @@ public class ChassisTest {
 
     // Tests constructors
     @Test
+    public void testChassisSansPoids() {
+        Chassis chassis = new Chassis();
+        assertEquals(0, chassis.getPoids());
+    }
+
+    @Test
     public void testChassis() {
         Chassis chassis = new Chassis(2000);
         assertEquals(2000, chassis.getPoids());
