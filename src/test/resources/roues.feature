@@ -1,24 +1,17 @@
 #Author: Victor FRITZ, Quentin SAUVAGE
 
-Feature: Création d'un chassis
+Feature: Création de roue
   En tant que client du garage,
-  Je veux créer un chassis,
-  Afin de pouvoir l'utiliser pour ma future voiture.
+  Je veux créer des roues,
+  Afin de pouvoir les utiliser pour ma future voiture.
 
-  Scenario Outline: le client crée une roue et l'associe à une voiture.
-    Given le client crée une nouvelle roue et souhaite l'associer à une voiture existance
-    When le client set la voiture à la roue
-    Then On peut accéder à la voiture à partir de la roue
-
-    Examples:
-      | appel constructeur | association de la voiture | voiture enregistré |
-      | roue = new Roue(); | roue.setVoiture(roue);    | voiture            |
-
-  Scenario Outline: le client ajoute .
-    Given Une voiture
-    When Le client ajoute 4 roues à la voiture
-    Then La voiture possède 4 roues
+  Scenario Outline: le client ajoute des roues à une voiture
+    Given le client crée <nombre de roue> roue et souhaite les associer à une voiture existance
+    When le client applique les roues à la voiture
+    Then La voiture possède <taille de la liste> roues
 
     Examples:
-      | appel constructeur       | nombre de roues ajotuées | Taille de la liste de roue |
-      | voiture = new Voiture(); | 4                        | 4                          |
+      | nombre de roue | taille de la liste |
+      | 1              | 1                  |
+      | 2              | 2                  |
+      | 4              | 4                  |
