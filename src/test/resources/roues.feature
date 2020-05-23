@@ -1,6 +1,6 @@
 #Author: Victor FRITZ, Quentin SAUVAGE
 
-Feature: Création de roue
+Feature: Création de roues
   En tant que client du garage,
   Je veux créer des roues,
   Afin de pouvoir les utiliser pour ma future voiture.
