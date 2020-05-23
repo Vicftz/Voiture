@@ -1,8 +1,6 @@
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Rule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +11,10 @@ public class RoueCucumberTest {
     private Voiture voiture;
     List<Roue> list = new ArrayList<>();
 
-    @Given("le client crée {int} roue et souhaite les associer à une voiture existance")
-    public void leClientCreeDesRoues(int nbRoue) {
+    @Given("le client crée {int} roues et souhaite les associer à une voiture existante")
+    public void leClientCreeDesRoues(int nbRoues) {
         voiture = new Voiture("Mercedes", "Rouge");
-        for(int i=0; i<nbRoue; i++){
+        for (int i = 0; i < nbRoues; i++) {
             list.add(new Roue());
         }
     }
@@ -29,9 +27,7 @@ public class RoueCucumberTest {
     }
 
     @Then("La voiture possède {int} roues")
-    public void laVoiturePossèdeDesRoues(int nbRoue) {
+    public void laVoiturePossedeDesRoues(int nbRoue) {
         assertEquals(nbRoue, voiture.getRoues().size());
     }
-
-
 }

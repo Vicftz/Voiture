@@ -3,7 +3,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -12,11 +11,11 @@ public class VoitureCucumberTest {
     private Chassis chassis;
     private ArrayList<Roue> roueList = new ArrayList<>();
 
-    @Given("le client crée {int} roue de poids {int}, un chassis de poids {int}")
-    public void leClientCréeUnNouveauChassisSansSpécifierSonPoids(int nbRoue, int poidsRoue, int poidsChassis) {
+    @Given("le client crée {int} roues de poids {int}, un chassis de poids {int}")
+    public void leClientCreeUnNouveauChassisSansSpecifierSonPoids(int nbRoues, int poidsRoue, int poidsChassis) {
         chassis = new Chassis(poidsChassis);
-        for (int i=0; i<nbRoue; i++){
-            roueList.add(new Roue(20,poidsRoue));
+        for (int i = 0; i < nbRoues; i++) {
+            roueList.add(new Roue(20, poidsRoue));
         }
     }
 
