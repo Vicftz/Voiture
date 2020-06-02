@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 
 public class VoitureTransformersTest {
     private Chassis chassis1;
-    private VoitureTransformers voitureTransformers1;
+    private Voiture voitureTransformers1;
     private ArrayList<Roue> roueList = new ArrayList<>();
     private Roue roue1;
     private Roue roue2;
@@ -30,7 +30,7 @@ public class VoitureTransformersTest {
         roue1 = new Roue();
         roue2 = new Roue(10, 10);
         roueList.add(roue1);
-        voitureTransformers1 = new VoitureTransformers("Rolls Royce", "noire", chassis1, roueList);
+        voitureTransformers1 = new Voiture("Rolls Royce", "noire", chassis1, roueList);
     }
 
     /**
@@ -66,14 +66,14 @@ public class VoitureTransformersTest {
     // Tests constructors
     @Test
     public void testNewVoiture1() {
-        voitureTransformers1 = new VoitureTransformers("Mercedes", "rouge");
+        voitureTransformers1 = new Voiture("Mercedes", "rouge");
         assertEquals("Mercedes", voitureTransformers1.getMarque());
         assertEquals("rouge", voitureTransformers1.getCouleur());
     }
 
     @Test
     public void testNewVoiture2() {
-        voitureTransformers1 = new VoitureTransformers("Mercedes", "rouge", chassis1);
+        voitureTransformers1 = new Voiture("Mercedes", "rouge", chassis1);
         assertEquals("Mercedes", voitureTransformers1.getMarque());
         assertEquals("rouge", voitureTransformers1.getCouleur());
         assertEquals(chassis1, voitureTransformers1.getChassis());
@@ -82,7 +82,7 @@ public class VoitureTransformersTest {
 
     @Test
     public void testNewVoiture3() {
-        voitureTransformers1 = new VoitureTransformers("Mercedes", "rouge", chassis1, roueList);
+        voitureTransformers1 = new Voiture("Mercedes", "rouge", chassis1, roueList);
         assertEquals("Mercedes", voitureTransformers1.getMarque());
         assertEquals("rouge", voitureTransformers1.getCouleur());
         assertEquals(chassis1, voitureTransformers1.getChassis());
@@ -123,14 +123,14 @@ public class VoitureTransformersTest {
     public void testRemoveRoueBiDir() {
         voitureTransformers1.removeRoue(roue1);
         assertFalse(voitureTransformers1.getRoues().contains(roue1));
-        assertNull(roue1.getVoiture());
+        assertNull(roue1.getVehiculeDestructeur());
     }
 
     @Test
     public void testAddRoueBiDir() {
         voitureTransformers1.addRoue(roue2);
         assertTrue(voitureTransformers1.getRoues().contains(roue2));
-        assertEquals(voitureTransformers1, roue2.getVoiture());
+        assertEquals(voitureTransformers1, roue2.getVehiculeDestructeur());
     }
 
     // Tests autres méthodes
@@ -148,7 +148,7 @@ public class VoitureTransformersTest {
     // Tests exceptions
     @Test(expected = UnsupportedOperationException.class)
     public void testAddRoueException() {
-        voitureTransformers1 = new VoitureTransformers("Mercedes", "rouge");
+        voitureTransformers1 = new Voiture("Mercedes", "rouge");
         for (int i = 0; i < 5; i++) {
             voitureTransformers1.addRoue(new Roue());
         }

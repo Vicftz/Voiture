@@ -2,28 +2,96 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public interface Voiture {
-    public String getMarque();
+public class VoitureTransformers implements Voiture {
+    private String marque;
+    private String couleur;
+    private Chassis chassis;
+    private List<Roue> roues = new ArrayList<>();
+    private int poids;
 
-    public void setMarque(String marque);
+    /**
+     * Constructeur d'objets de classe src.VoitureTransformers
+     */
+    public VoitureTransformers(){
+    }
+    public VoitureTransformers(String marque, String couleur) {
+        // initialisation des variables d'instance
+        this.marque = marque;
+        this.couleur = couleur;
+    }
 
-    public String getCouleur();
+    public VoitureTransformers(String marque, String couleur, Chassis chassis) {
+        // initialisation des variables d'instance
+        this(marque, couleur);
+        this.chassis = chassis;
+    }
 
-    public void setCouleur(String couleur);
+    public VoitureTransformers(String marque, String couleur, Chassis chassis, ArrayList<Roue> roues) {
+        // initialisation des variables d'instance
+        this(marque, couleur, chassis);
+        this.roues = roues;
+    }
 
-    public int getPoids();
+    public String getMarque() {
+        return this.marque;
+    }
 
-    public Chassis getChassis();
+    public void setMarque(String marque) {
+        this.marque = marque;
+    }
 
-    public void setChassis(Chassis chassis);
+    public String getCouleur() {
+        return this.couleur;
+    }
 
-    public List<Roue> getRoues();
+    public void setCouleur(String couleur) {
+        this.couleur = couleur;
+    }
 
-    public void setRoues(ArrayList<Roue> roues);
+    public int getPoids() {
+        poids = this.chassis.getPoids();
+        for (Roue roue : this.roues) {
+            poids += roue.getPoids();
+        }
+        return poids;
+    }
 
-    public Voiture removeRoue(Roue roue);
+    public Chassis getChassis() {
+        return this.chassis;
+    }
 
-    public void addRoue(Roue roue);
+    public void setChassis(Chassis chassis) {
+        this.chassis = chassis;
+    }
 
-    public String toString();
+    public List<Roue> getRoues() {
+        return Collections.unmodifiableList(roues);
+    }
+
+    public void setRoues(ArrayList<Roue> roues) {
+        this.roues = roues;
+    }
+
+    public VoitureTransformers removeRoue(Roue roue) {
+        if (this.roues.contains(roue)) {
+            this.roues.remove(roue);
+            roue.removeVoiture();
+        }
+        return this;
+    }
+
+    public void addRoue(Roue roue) {
+        if (this.roues.size() < 4) {
+            this.roues.add(roue);
+            if (roue.getVoiture() != this) {
+                roue.setVoiture(this);
+            }
+        } else {
+            throw new UnsupportedOperationException("La voiture a déjà 4 roues");
+        }
+    }
+
+    public String toString() {
+        return this.marque + " de couleur " + couleur;
+    }
 }
