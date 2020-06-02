@@ -8,7 +8,7 @@ public class ChassisTest {
     private Chassis chassis1;
 
     /**
-     * Default constructor for test class src.VoitureTest
+     * Default constructor for test class src.VoitureTransformersTest
      */
     public ChassisTest() {
     }

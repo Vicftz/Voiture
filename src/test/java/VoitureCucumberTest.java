@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 
 public class VoitureCucumberTest {
-    private Voiture voiture = new Voiture("Mercedes", "rouge");
+    private VoitureTransformers voitureTransformers = new VoitureTransformers("Mercedes", "rouge");
     private Chassis chassis;
     private ArrayList<Roue> roueList = new ArrayList<>();
 
@@ -20,43 +20,43 @@ public class VoitureCucumberTest {
         }
     }
 
-    @When("le client applique les éléments à la voiture")
+    @When("le client applique les éléments à la voitureTransformers")
     public void leClientAppliqueLesElementsALaVoiture() {
-        voiture.setRoues(roueList);
-        voiture.setChassis(chassis);
+        voitureTransformers.setRoues(roueList);
+        voitureTransformers.setChassis(chassis);
     }
 
-    @Then("Le poids de la voiture vaut {int}")
+    @Then("Le poids de la voitureTransformers vaut {int}")
     public void verificationDuPoidsDeLaVoiture(int poidsVoiture) {
-        assertEquals(poidsVoiture, voiture.getPoids());
+        assertEquals(poidsVoiture, voitureTransformers.getPoids());
     }
 
-    @Given("le client a une voiture à {int} roues de poids {int}")
+    @Given("le client a une voitureTransformers à {int} roues de poids {int}")
     public void leClientAUneVoitureAvecDesRoues(int nbRoues, int poidsRoue) {
         Chassis chassis = new Chassis(0);
-        voiture.setChassis(chassis);
+        voitureTransformers.setChassis(chassis);
         roueList = new ArrayList<>();
         for (int i = 0; i < nbRoues; i++) {
             roueList.add(new Roue(20, poidsRoue));
         }
-        voiture.setRoues(roueList);
+        voitureTransformers.setRoues(roueList);
     }
 
-    @When("le client remplace une roue de sa voiture par une nouvelle de poids {int}")
+    @When("le client remplace une roue de sa voitureTransformers par une nouvelle de poids {int}")
     public void leClientRemplaceUneRoue(int poidsRoue) {
-        Roue roueCassee = voiture.getRoues().get(0);
-        voiture.removeRoue(roueCassee);
+        Roue roueCassee = voitureTransformers.getRoues().get(0);
+        voitureTransformers.removeRoue(roueCassee);
         Roue roueNeuve = new Roue(20, poidsRoue);
-        voiture.addRoue(roueNeuve);
+        voitureTransformers.addRoue(roueNeuve);
     }
 
-    @Then("la voiture a toujours {int} roues")
+    @Then("la voitureTransformers a toujours {int} roues")
     public void laVoitureAToujoursAutantDeRoues(int nbRoues) {
-        assertEquals(nbRoues, voiture.getRoues().size());
+        assertEquals(nbRoues, voitureTransformers.getRoues().size());
     }
 
-    @And("le poids de la voiture est mis à jour au poids {int}")
+    @And("le poids de la voitureTransformers est mis à jour au poids {int}")
     public void lePoidsDeLaVoitureEstMisAJour(int poidsFinal) {
-        assertEquals(poidsFinal, voiture.getPoids());
+        assertEquals(poidsFinal, voitureTransformers.getPoids());
     }
 }

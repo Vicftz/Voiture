@@ -2,94 +2,28 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Voiture {
-    private String marque;
-    private String couleur;
-    private Chassis chassis;
-    private List<Roue> roues = new ArrayList<>();
-    private int poids;
+public interface Voiture {
+    public String getMarque();
 
-    /**
-     * Constructeur d'objets de classe src.Voiture
-     */
-    public Voiture(String marque, String couleur) {
-        // initialisation des variables d'instance
-        this.marque = marque;
-        this.couleur = couleur;
-    }
+    public void setMarque(String marque);
 
-    public Voiture(String marque, String couleur, Chassis chassis) {
-        // initialisation des variables d'instance
-        this(marque, couleur);
-        this.chassis = chassis;
-    }
+    public String getCouleur();
 
-    public Voiture(String marque, String couleur, Chassis chassis, ArrayList<Roue> roues) {
-        // initialisation des variables d'instance
-        this(marque, couleur, chassis);
-        this.roues = roues;
-    }
+    public void setCouleur(String couleur);
 
-    public String getMarque() {
-        return this.marque;
-    }
+    public int getPoids();
 
-    public void setMarque(String marque) {
-        this.marque = marque;
-    }
+    public Chassis getChassis();
 
-    public String getCouleur() {
-        return this.couleur;
-    }
+    public void setChassis(Chassis chassis);
 
-    public void setCouleur(String couleur) {
-        this.couleur = couleur;
-    }
+    public List<Roue> getRoues();
 
-    public int getPoids() {
-        poids = this.chassis.getPoids();
-        for (Roue roue : this.roues) {
-            poids += roue.getPoids();
-        }
-        return poids;
-    }
+    public void setRoues(ArrayList<Roue> roues);
 
-    public Chassis getChassis() {
-        return this.chassis;
-    }
+    public Voiture removeRoue(Roue roue);
 
-    public void setChassis(Chassis chassis) {
-        this.chassis = chassis;
-    }
+    public void addRoue(Roue roue);
 
-    public List<Roue> getRoues() {
-        return Collections.unmodifiableList(roues);
-    }
-
-    public void setRoues(ArrayList<Roue> roues) {
-        this.roues = roues;
-    }
-
-    public Voiture removeRoue(Roue roue) {
-        if (this.roues.contains(roue)) {
-            this.roues.remove(roue);
-            roue.removeVoiture();
-        }
-        return this;
-    }
-
-    public void addRoue(Roue roue) {
-        if (this.roues.size() < 4) {
-            this.roues.add(roue);
-            if (roue.getVoiture() != this) {
-                roue.setVoiture(this);
-            }
-        } else {
-            throw new UnsupportedOperationException("La voiture a déjà 4 roues");
-        }
-    }
-
-    public String toString() {
-        return this.marque + " de couleur " + couleur;
-    }
+    public String toString();
 }

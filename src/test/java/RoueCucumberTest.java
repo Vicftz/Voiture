@@ -8,26 +8,26 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class RoueCucumberTest {
-    private Voiture voiture;
+    private VoitureTransformers voitureTransformers;
     List<Roue> list = new ArrayList<>();
 
-    @Given("le client crée {int} roues et souhaite les associer à une voiture existante")
+    @Given("le client crée {int} roues et souhaite les associer à une voitureTransformers existante")
     public void leClientCreeDesRoues(int nbRoues) {
-        voiture = new Voiture("Mercedes", "Rouge");
+        voitureTransformers = new VoitureTransformers("Mercedes", "Rouge");
         for (int i = 0; i < nbRoues; i++) {
             list.add(new Roue());
         }
     }
 
-    @When("le client applique les roues à la voiture")
+    @When("le client applique les roues à la voitureTransformers")
     public void leClientAppliqueLesRouesALaVoiture() {
         for (Roue roue : list) {
-            voiture.addRoue(roue);
+            voitureTransformers.addRoue(roue);
         }
     }
 
-    @Then("La voiture possède {int} roues")
+    @Then("La voitureTransformers possède {int} roues")
     public void laVoiturePossedeDesRoues(int nbRoue) {
-        assertEquals(nbRoue, voiture.getRoues().size());
+        assertEquals(nbRoue, voitureTransformers.getRoues().size());
     }
 }
