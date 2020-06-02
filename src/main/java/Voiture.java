@@ -13,6 +13,8 @@ public class Voiture implements VehiculeDestructeur {
      * Constructeur d'objets de classe src.Voiture
      */
     public Voiture(){
+        this.marque = "";
+        this.couleur = "";
     }
     public Voiture(String marque, String couleur) {
         // initialisation des variables d'instance

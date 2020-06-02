@@ -65,6 +65,13 @@ public class VoitureTest {
 
     // Tests constructors
     @Test
+    public void testNewVoiture() {
+        voiture1 = new Voiture();
+        assertEquals("", voiture1.getMarque());
+        assertEquals("", voiture1.getCouleur());
+    }
+
+    @Test
     public void testNewVoiture1() {
         voiture1 = new Voiture("Mercedes", "rouge");
         assertEquals("Mercedes", voiture1.getMarque());
