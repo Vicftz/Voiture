@@ -20,18 +20,18 @@ public class VoitureCucumberTest {
         }
     }
 
-    @When("le client applique les éléments à la voitureTransformers")
+    @When("le client applique les éléments à la voiture")
     public void leClientAppliqueLesElementsALaVoiture() {
         voitureTransformers.setRoues(roueList);
         voitureTransformers.setChassis(chassis);
     }
 
-    @Then("Le poids de la voitureTransformers vaut {int}")
+    @Then("Le poids de la voiture vaut {int}")
     public void verificationDuPoidsDeLaVoiture(int poidsVoiture) {
         assertEquals(poidsVoiture, voitureTransformers.getPoids());
     }
 
-    @Given("le client a une voitureTransformers à {int} roues de poids {int}")
+    @Given("le client a une voiture à {int} roues de poids {int}")
     public void leClientAUneVoitureAvecDesRoues(int nbRoues, int poidsRoue) {
         Chassis chassis = new Chassis(0);
         voitureTransformers.setChassis(chassis);
@@ -42,7 +42,7 @@ public class VoitureCucumberTest {
         voitureTransformers.setRoues(roueList);
     }
 
-    @When("le client remplace une roue de sa voitureTransformers par une nouvelle de poids {int}")
+    @When("le client remplace une roue de sa voiture par une nouvelle de poids {int}")
     public void leClientRemplaceUneRoue(int poidsRoue) {
         Roue roueCassee = voitureTransformers.getRoues().get(0);
         voitureTransformers.removeRoue(roueCassee);
@@ -50,12 +50,12 @@ public class VoitureCucumberTest {
         voitureTransformers.addRoue(roueNeuve);
     }
 
-    @Then("la voitureTransformers a toujours {int} roues")
+    @Then("la voiture a toujours {int} roues")
     public void laVoitureAToujoursAutantDeRoues(int nbRoues) {
         assertEquals(nbRoues, voitureTransformers.getRoues().size());
     }
 
-    @And("le poids de la voitureTransformers est mis à jour au poids {int}")
+    @And("le poids de la voiture est mis à jour au poids {int}")
     public void lePoidsDeLaVoitureEstMisAJour(int poidsFinal) {
         assertEquals(poidsFinal, voitureTransformers.getPoids());
     }
