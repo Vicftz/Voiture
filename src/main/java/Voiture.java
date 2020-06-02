@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class VoitureTransformers implements Voiture {
+public class Voiture implements VehiculeDestructeur {
     private String marque;
     private String couleur;
     private Chassis chassis;
@@ -10,23 +10,23 @@ public class VoitureTransformers implements Voiture {
     private int poids;
 
     /**
-     * Constructeur d'objets de classe src.VoitureTransformers
+     * Constructeur d'objets de classe src.Voiture
      */
-    public VoitureTransformers(){
+    public Voiture(){
     }
-    public VoitureTransformers(String marque, String couleur) {
+    public Voiture(String marque, String couleur) {
         // initialisation des variables d'instance
         this.marque = marque;
         this.couleur = couleur;
     }
 
-    public VoitureTransformers(String marque, String couleur, Chassis chassis) {
+    public Voiture(String marque, String couleur, Chassis chassis) {
         // initialisation des variables d'instance
         this(marque, couleur);
         this.chassis = chassis;
     }
 
-    public VoitureTransformers(String marque, String couleur, Chassis chassis, ArrayList<Roue> roues) {
+    public Voiture(String marque, String couleur, Chassis chassis, ArrayList<Roue> roues) {
         // initialisation des variables d'instance
         this(marque, couleur, chassis);
         this.roues = roues;
@@ -72,7 +72,7 @@ public class VoitureTransformers implements Voiture {
         this.roues = roues;
     }
 
-    public VoitureTransformers removeRoue(Roue roue) {
+    public Voiture removeRoue(Roue roue) {
         if (this.roues.contains(roue)) {
             this.roues.remove(roue);
             roue.removeVoiture();
@@ -83,8 +83,8 @@ public class VoitureTransformers implements Voiture {
     public void addRoue(Roue roue) {
         if (this.roues.size() < 4) {
             this.roues.add(roue);
-            if (roue.getVoiture() != this) {
-                roue.setVoiture(this);
+            if (roue.getVehiculeDestructeur() != this) {
+                roue.setVehiculeDestructeur(this);
             }
         } else {
             throw new UnsupportedOperationException("La voiture a déjà 4 roues");

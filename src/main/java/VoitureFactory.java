@@ -1,10 +1,8 @@
 public class VoitureFactory {
-    public Voiture createVoiture(String voitureType){
+    public VehiculeDestructeur createVoiture(String voitureType){
         if(voitureType.equalsIgnoreCase("TRANSFORMERS")){
-            return new VoitureTransformers();
+            return new Voiture();
 
-        } else if(voitureType.equalsIgnoreCase("CITADINE")){
-            return new VoitureCitadine();
         }
         return null;
     }

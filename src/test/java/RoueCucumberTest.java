@@ -8,12 +8,12 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class RoueCucumberTest {
-    private VoitureTransformers voitureTransformers;
+    private Voiture voitureTransformers;
     List<Roue> list = new ArrayList<>();
 
     @Given("le client crée {int} roues et souhaite les associer à une voiture existante")
     public void leClientCreeDesRoues(int nbRoues) {
-        voitureTransformers = new VoitureTransformers("Mercedes", "Rouge");
+        voitureTransformers = new Voiture("Mercedes", "Rouge");
         for (int i = 0; i < nbRoues; i++) {
             list.add(new Roue());
         }

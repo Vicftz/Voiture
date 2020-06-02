@@ -1,8 +1,7 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-public interface Voiture {
+public interface VehiculeDestructeur {
     public String getMarque();
 
     public void setMarque(String marque);
@@ -21,7 +20,7 @@ public interface Voiture {
 
     public void setRoues(ArrayList<Roue> roues);
 
-    public Voiture removeRoue(Roue roue);
+    public VehiculeDestructeur removeRoue(Roue roue);
 
     public void addRoue(Roue roue);
 

@@ -1,5 +1,5 @@
 public class Roue {
-    private Voiture voiture;
+    private VehiculeDestructeur vehiculeDestructeur;
     private float diametre;
     private int poids;
 
@@ -14,26 +14,26 @@ public class Roue {
         ;
     }
 
-    public Roue(float diametre, int poids, Voiture voiture) {
+    public Roue(float diametre, int poids, VehiculeDestructeur vehiculeDestructeur) {
         this(diametre, poids);
-        this.voiture = voiture;
+        this.vehiculeDestructeur = vehiculeDestructeur;
     }
 
-    public Voiture getVoiture() {
-        return voiture;
+    public VehiculeDestructeur getVehiculeDestructeur() {
+        return vehiculeDestructeur;
     }
 
-    public void setVoiture(Voiture voiture) throws UnsupportedOperationException {
-        this.voiture = voiture;
-        if (!voiture.getRoues().contains(this)) {
-            voiture.addRoue(this);
+    public void setVehiculeDestructeur(VehiculeDestructeur vehiculeDestructeur) throws UnsupportedOperationException {
+        this.vehiculeDestructeur = vehiculeDestructeur;
+        if (!vehiculeDestructeur.getRoues().contains(this)) {
+            vehiculeDestructeur.addRoue(this);
         }
     }
 
     public Roue removeVoiture() {
-        if (this.voiture != null) {
-            this.voiture.removeRoue(this);
-            this.voiture = null;
+        if (this.vehiculeDestructeur != null) {
+            this.vehiculeDestructeur.removeRoue(this);
+            this.vehiculeDestructeur = null;
         }
         return this;
     }

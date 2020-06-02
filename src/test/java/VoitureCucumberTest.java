@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 
 public class VoitureCucumberTest {
-    private VoitureTransformers voitureTransformers = new VoitureTransformers("Mercedes", "rouge");
+    private Voiture voitureTransformers = new Voiture("Mercedes", "rouge");
     private Chassis chassis;
     private ArrayList<Roue> roueList = new ArrayList<>();
 
