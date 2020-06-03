@@ -2,27 +2,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface VehiculeDestructeur {
-    public String getMarque();
+    String getMarque();
 
-    public void setMarque(String marque);
+    void setMarque(String marque);
 
-    public String getCouleur();
+    String getCouleur();
 
-    public void setCouleur(String couleur);
+    void setCouleur(String couleur);
 
-    public int getPoids();
+    int getPoids();
 
-    public Chassis getChassis();
+    Chassis getChassis();
 
-    public void setChassis(Chassis chassis);
+    void setChassis(Chassis chassis);
 
-    public List<Roue> getRoues();
+    List<Roue> getRoues();
 
-    public void setRoues(ArrayList<Roue> roues);
+    void setRoues(ArrayList<Roue> roues);
 
-    public VehiculeDestructeur removeRoue(Roue roue);
+    VehiculeDestructeur removeRoue(Roue roue);
 
-    public void addRoue(Roue roue);
+    void addRoue(Roue roue);
 
-    public String toString();
+    String toString();
 }
