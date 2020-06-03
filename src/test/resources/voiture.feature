@@ -14,3 +14,8 @@ Feature: Création de voiture et de ses éléments
       | nombre de roues | poids des roues | poids du chassis | poids total |
       | 4               | 50              | 200              | 400         |
       | 4               | 100             | 500              | 900         |
+
+  Scenario: un habitant de la ville fait créer une voiture à l'usine
+    Given un habitant normal
+    When il veut créer une voiture à l'aide de la factory
+    Then la voiture créée est de la classe attendue

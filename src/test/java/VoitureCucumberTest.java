@@ -10,6 +10,7 @@ public class VoitureCucumberTest {
     private Voiture voiture = new Voiture("Mercedes", "rouge");
     private Chassis chassis;
     private ArrayList<Roue> roueList = new ArrayList<>();
+    private VehiculeDestructeur v;
 
     @Given("le client crée {int} roues de poids {int}, un chassis de poids {int}")
     public void leClientCreeUnNouveauChassisSansSpecifierSonPoids(int nbRoues, int poidsRoue, int poidsChassis) {
@@ -28,5 +29,20 @@ public class VoitureCucumberTest {
     @Then("Le poids de la voiture vaut {int}")
     public void verificationDuPoidsDeLaVoiture(int poidsVoiture) {
         assertEquals(poidsVoiture, voiture.getPoids());
+    }
+
+    @Given("un habitant normal")
+    public void unHabitantNormal() {
+    }
+
+    @When("il veut créer une voiture à l'aide de la factory")
+    public void ilVeutCreerUneVoitureALAideDeLaFactory() {
+        VoitureFactory vf = new VoitureFactory();
+        v = vf.createVoiture("");
+    }
+
+    @Then("la voiture créée est de la classe attendue")
+    public void laVoitureCreeeEstDeLaClasseAttendue() {
+        assertEquals(Voiture.class, v.getClass());
     }
 }
