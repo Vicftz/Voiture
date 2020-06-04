@@ -12,6 +12,6 @@ Feature: Création de roues
 
     Examples:
       | nombre de roues | taille de la liste |
-      | 1              | 1                  |
-      | 2              | 2                  |
-      | 4              | 4                  |
+      | 1               | 1                  |
+      | 2               | 2                  |
+      | 4               | 4                  |

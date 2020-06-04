@@ -1,8 +1,9 @@
+package voiture;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import static org.junit.Assert.assertEquals;
+import org.junit.Assert;
 
 public class ChassisCucumberTest {
     private Chassis chassis;
@@ -19,7 +20,7 @@ public class ChassisCucumberTest {
 
     @Then("le chassis est créé et son {int} est celui indiqué en entrée")
     public void leChassisEstCreeEtSonPoidsEstCeluiIndiqueEnEntree(int poids) {
-        assertEquals(poids, chassis.getPoids());
+        Assert.assertEquals(poids, chassis.getPoids());
     }
 
     @When("le client applique au chassis un {int} négatif")
@@ -29,6 +30,6 @@ public class ChassisCucumberTest {
 
     @Then("le chassis est créé et son poids est enregistré avec une valeur de {int}")
     public void leChassisEstCreeEtSonPoidsEstEnregistreAvecUneValeurDeZero(int poids) {
-        assertEquals(poids, chassis.getPoids());
+        Assert.assertEquals(poids, chassis.getPoids());
     }
 }

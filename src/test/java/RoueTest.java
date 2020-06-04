@@ -1,6 +1,7 @@
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import voiture.Roue;
+import voiture.Voiture;
 
 import static org.junit.Assert.*;
 
@@ -28,15 +29,6 @@ public class RoueTest {
         roue1 = new Roue();
         roue2 = new Roue(20, 30);
         roue3 = new Roue(20, 30, voitureTransformers);
-    }
-
-    /**
-     * Tears down the test fixture.
-     * <p>
-     * Called after every test case method.
-     */
-    @After
-    public void tearDown() {
     }
 
     // Tests getters

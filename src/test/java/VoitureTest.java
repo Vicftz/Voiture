@@ -1,6 +1,8 @@
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import voiture.Chassis;
+import voiture.Roue;
+import voiture.Voiture;
 
 import java.util.ArrayList;
 
@@ -31,15 +33,6 @@ public class VoitureTest {
         roue2 = new Roue(10, 10);
         roueList.add(roue1);
         voiture1 = new Voiture("Rolls Royce", "noire", chassis1, roueList);
-    }
-
-    /**
-     * Tears down the test fixture.
-     * <p>
-     * Called after every test case method.
-     */
-    @After
-    public void tearDown() {
     }
 
     // Tests getters

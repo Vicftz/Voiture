@@ -1,6 +1,6 @@
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import voiture.Chassis;
 
 import static org.junit.Assert.assertEquals;
 
@@ -21,15 +21,6 @@ public class ChassisTest {
     @Before
     public void setUp() {
         chassis1 = new Chassis(1000);
-    }
-
-    /**
-     * Tears down the test fixture.
-     * <p>
-     * Called after every test case method.
-     */
-    @After
-    public void tearDown() {
     }
 
     // Tests getters

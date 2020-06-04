@@ -1,3 +1,5 @@
+package voiture;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +22,7 @@ public interface VehiculeDestructeur {
 
     void setRoues(ArrayList<Roue> roues);
 
-    VehiculeDestructeur removeRoue(Roue roue);
+    void removeRoue(Roue roue);
 
     void addRoue(Roue roue);
 

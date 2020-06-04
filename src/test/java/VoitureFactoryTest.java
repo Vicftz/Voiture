@@ -1,6 +1,8 @@
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import voiture.VehiculeDestructeur;
+import voiture.Voiture;
+import voiture.VoitureFactory;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,15 +12,6 @@ public class VoitureFactoryTest {
     @Before
     public void setUp() {
         voitureFactory = new VoitureFactory();
-    }
-
-    /**
-     * Tears down the test fixture.
-     * <p>
-     * Called after every test case method.
-     */
-    @After
-    public void tearDown() {
     }
 
     @Test

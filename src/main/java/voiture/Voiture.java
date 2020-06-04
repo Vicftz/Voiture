@@ -1,3 +1,5 @@
+package voiture;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -7,15 +9,12 @@ public class Voiture implements VehiculeDestructeur {
     private String couleur;
     private Chassis chassis;
     private List<Roue> roues = new ArrayList<>();
-    private int poids;
 
-    /**
-     * Constructeur d'objets de classe src.Voiture
-     */
-    public Voiture(){
+    public Voiture() {
         this.marque = "";
         this.couleur = "";
     }
+
     public Voiture(String marque, String couleur) {
         // initialisation des variables d'instance
         this.marque = marque;
@@ -34,54 +33,64 @@ public class Voiture implements VehiculeDestructeur {
         this.roues = roues;
     }
 
+    @Override
     public String getMarque() {
         return this.marque;
     }
 
+    @Override
     public void setMarque(String marque) {
         this.marque = marque;
     }
 
+    @Override
     public String getCouleur() {
         return this.couleur;
     }
 
+    @Override
     public void setCouleur(String couleur) {
         this.couleur = couleur;
     }
 
+    @Override
     public int getPoids() {
-        poids = this.chassis.getPoids();
+        int poids = this.chassis.getPoids();
         for (Roue roue : this.roues) {
             poids += roue.getPoids();
         }
         return poids;
     }
 
+    @Override
     public Chassis getChassis() {
         return this.chassis;
     }
 
+    @Override
     public void setChassis(Chassis chassis) {
         this.chassis = chassis;
     }
 
+    @Override
     public List<Roue> getRoues() {
         return Collections.unmodifiableList(roues);
     }
 
+    @Override
     public void setRoues(ArrayList<Roue> roues) {
         this.roues = roues;
     }
 
-    public Voiture removeRoue(Roue roue) {
+    @Override
+    public void removeRoue(Roue roue) {
         if (this.roues.contains(roue)) {
             this.roues.remove(roue);
             roue.removeVoiture();
         }
-        return this;
     }
 
+    @Override
     public void addRoue(Roue roue) {
         if (this.roues.size() < 4) {
             this.roues.add(roue);
@@ -93,6 +102,7 @@ public class Voiture implements VehiculeDestructeur {
         }
     }
 
+    @Override
     public String toString() {
         return this.marque + " de couleur " + couleur;
     }
