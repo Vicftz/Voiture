@@ -123,14 +123,14 @@ public class VoitureTest {
     public void testRemoveRoueBiDir() {
         voiture1.removeRoue(roue1);
         assertFalse(voiture1.getRoues().contains(roue1));
-        assertNull(roue1.getVehiculeDestructeur());
+        assertNull(roue1.getEngin());
     }
 
     @Test
     public void testAddRoueBiDir() {
         voiture1.addRoue(roue2);
         assertTrue(voiture1.getRoues().contains(roue2));
-        assertEquals(voiture1, roue2.getVehiculeDestructeur());
+        assertEquals(voiture1, roue2.getEngin());
     }
 
     // Tests autres méthodes

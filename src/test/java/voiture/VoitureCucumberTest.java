@@ -11,7 +11,7 @@ public class VoitureCucumberTest {
     private final Voiture voiture = new Voiture("Mercedes", "rouge");
     private Chassis chassis;
     private final ArrayList<Roue> roueList = new ArrayList<>();
-    private VehiculeDestructeur v;
+    private Engin v;
 
     @Given("le client crée {int} roues de poids {int}, un chassis de poids {int}")
     public void leClientCreeUnNouveauChassisSansSpecifierSonPoids(int nbRoues, int poidsRoue, int poidsChassis) {

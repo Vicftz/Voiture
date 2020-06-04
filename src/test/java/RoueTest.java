@@ -34,7 +34,7 @@ public class RoueTest {
     // Tests getters
     @Test
     public void testGetVoiture() {
-        assertEquals(roue3.getVehiculeDestructeur(), voitureTransformers);
+        assertEquals(roue3.getEngin(), voitureTransformers);
     }
 
     @Test
@@ -53,7 +53,7 @@ public class RoueTest {
         Roue roue = new Roue();
         assertEquals(0, roue.getDiametre(), 0);
         assertEquals(0, roue.getPoids());
-        assertNull(roue.getVehiculeDestructeur());
+        assertNull(roue.getEngin());
     }
 
     @Test
@@ -61,7 +61,7 @@ public class RoueTest {
         Roue roue = new Roue(20, 30);
         assertEquals(roue.getDiametre(), 20, 0);
         assertEquals(roue.getPoids(), 30);
-        assertNull(roue.getVehiculeDestructeur());
+        assertNull(roue.getEngin());
     }
 
     @Test
@@ -69,14 +69,14 @@ public class RoueTest {
         Roue roue = new Roue(20, 30, voitureTransformers);
         assertEquals(20, roue.getDiametre(), 0);
         assertEquals(30, roue.getPoids());
-        assertEquals(voitureTransformers, roue.getVehiculeDestructeur());
+        assertEquals(voitureTransformers, roue.getEngin());
     }
 
     // Tests setters
     @Test
     public void testSetVoiture() {
-        roue1.setVehiculeDestructeur(voitureTransformers);
-        assertEquals(roue1.getVehiculeDestructeur(), voitureTransformers);
+        roue1.setEngin(voitureTransformers);
+        assertEquals(roue1.getEngin(), voitureTransformers);
     }
 
     @Test
@@ -95,14 +95,14 @@ public class RoueTest {
     @Test
     public void testRemoveVoitureBiDir() {
         roue3.removeVoiture();
-        assertNull(roue3.getVehiculeDestructeur());
+        assertNull(roue3.getEngin());
         assertFalse(voitureTransformers.getRoues().contains(roue3));
     }
 
     @Test
     public void testAddVoitureBiDir() {
-        roue2.setVehiculeDestructeur(voitureTransformers);
-        assertEquals(voitureTransformers, roue2.getVehiculeDestructeur());
+        roue2.setEngin(voitureTransformers);
+        assertEquals(voitureTransformers, roue2.getEngin());
         assertTrue(voitureTransformers.getRoues().contains(roue2));
     }
 
@@ -115,7 +115,7 @@ public class RoueTest {
             voitureTransformers.addRoue(new Roue());
         }
         //Déjà 4 roues présentes dans la voitureTransformers, exception levée à la 5ème
-        roue3.setVehiculeDestructeur(voitureTransformers);
+        roue3.setEngin(voitureTransformers);
     }
 
     // Tests domaine validité paramètres

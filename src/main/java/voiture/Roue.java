@@ -1,7 +1,7 @@
 package voiture;
 
 public class Roue {
-    private VehiculeDestructeur vehiculeDestructeur;
+    private Engin engin;
     private float diametre;
     private int poids;
 
@@ -15,26 +15,26 @@ public class Roue {
         this.poids = Math.max(poids, 0);
     }
 
-    public Roue(float diametre, int poids, VehiculeDestructeur vehiculeDestructeur) {
+    public Roue(float diametre, int poids, Engin engin) {
         this(diametre, poids);
-        this.vehiculeDestructeur = vehiculeDestructeur;
+        this.engin = engin;
     }
 
-    public VehiculeDestructeur getVehiculeDestructeur() {
-        return vehiculeDestructeur;
+    public Engin getEngin() {
+        return engin;
     }
 
-    public void setVehiculeDestructeur(VehiculeDestructeur vehiculeDestructeur) throws UnsupportedOperationException {
-        this.vehiculeDestructeur = vehiculeDestructeur;
-        if (!vehiculeDestructeur.getRoues().contains(this)) {
-            vehiculeDestructeur.addRoue(this);
+    public void setEngin(Engin engin) throws UnsupportedOperationException {
+        this.engin = engin;
+        if (!engin.getRoues().contains(this)) {
+            engin.addRoue(this);
         }
     }
 
     public void removeVoiture() {
-        if (this.vehiculeDestructeur != null) {
-            this.vehiculeDestructeur.removeRoue(this);
-            this.vehiculeDestructeur = null;
+        if (this.engin != null) {
+            this.engin.removeRoue(this);
+            this.engin = null;
         }
     }
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Voiture implements VehiculeDestructeur {
+public class Voiture implements Engin {
     private String marque;
     private String couleur;
     private Chassis chassis;
@@ -94,8 +94,8 @@ public class Voiture implements VehiculeDestructeur {
     public void addRoue(Roue roue) {
         if (this.roues.size() < 4) {
             this.roues.add(roue);
-            if (roue.getVehiculeDestructeur() != this) {
-                roue.setVehiculeDestructeur(this);
+            if (roue.getEngin() != this) {
+                roue.setEngin(this);
             }
         } else {
             throw new UnsupportedOperationException("La voiture a déjà 4 roues");

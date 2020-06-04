@@ -1,6 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
-import voiture.VehiculeDestructeur;
+import voiture.Engin;
 import voiture.Voiture;
 import voiture.VoitureFactory;
 
@@ -16,7 +16,7 @@ public class VoitureFactoryTest {
 
     @Test
     public void testCreateVoiture() {
-        VehiculeDestructeur v = voitureFactory.createVoiture("TRANSFORMERS");
+        Engin v = voitureFactory.createVoiture("TRANSFORMERS");
         assertEquals(Voiture.class, v.getClass());
     }
 }
