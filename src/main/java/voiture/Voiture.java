@@ -33,27 +33,27 @@ public class Voiture implements Engin {
         this.roues = roues;
     }
 
-    @Override
+
     public String getMarque() {
         return this.marque;
     }
 
-    @Override
+
     public void setMarque(String marque) {
         this.marque = marque;
     }
 
-    @Override
+
     public String getCouleur() {
         return this.couleur;
     }
 
-    @Override
+
     public void setCouleur(String couleur) {
         this.couleur = couleur;
     }
 
-    @Override
+
     public int getPoids() {
         int poids = this.chassis.getPoids();
         for (Roue roue : this.roues) {
@@ -62,22 +62,23 @@ public class Voiture implements Engin {
         return poids;
     }
 
-    @Override
+
     public Chassis getChassis() {
         return this.chassis;
     }
 
-    @Override
+
     public void setChassis(Chassis chassis) {
         this.chassis = chassis;
     }
+
 
     @Override
     public List<Roue> getRoues() {
         return Collections.unmodifiableList(roues);
     }
 
-    @Override
+
     public void setRoues(ArrayList<Roue> roues) {
         this.roues = roues;
     }
